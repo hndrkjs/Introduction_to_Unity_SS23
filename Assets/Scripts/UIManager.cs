@@ -19,7 +19,7 @@ public class UI_Manager : MonoBehaviour
         astronautsCollected.text = "Astronauts Saved: " + n_atronauts;
     }
 
-    public void UpdateAstronautsCollected(int health)
+    public void UpdateLives(int health)
     {
         // UPDATE TEXT 
         lives.text = "Lives: " + health;

@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
 
     public void Damage() {
         lives--;
-        uiManager.UpdateLives(lives);
+        //uiManager.UpdateLives(lives);
     }
 
 
