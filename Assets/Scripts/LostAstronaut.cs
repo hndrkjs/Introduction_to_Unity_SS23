@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LostAstronaut : MonoBehaviour
 {
+    [SerializeField]
+    private UI_Manager uiManager;
+
     private void OnTriggerEnter(Collider other)
     {
         // we need to check that the astronaut actually collided with the character. Since the aliens are moving around, a collision
@@ -17,6 +20,9 @@ public class LostAstronaut : MonoBehaviour
 
             //this.gameObject.SetActive(false);
             Destroy(this.gameObject);
+
+            uiManager.UpdateAstronautsCollected();
+            
         }
 
 

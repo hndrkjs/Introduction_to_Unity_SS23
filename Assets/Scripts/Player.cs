@@ -24,6 +24,9 @@ public class Player : MonoBehaviour
     private Transform rearLeftMesh;
 
     [SerializeField]
+    private UI_Manager uiManager;
+
+    [SerializeField]
     private float forwardSpeed = 4000f;
     [SerializeField]
     private float reverseSpeed = 3500f;
@@ -97,8 +100,9 @@ public class Player : MonoBehaviour
 
     }
 
-    public void Damage(){
+    public void Damage() {
         lives--;
+        uiManager.UpdateLives(lives);
     }
 
 
