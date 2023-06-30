@@ -24,20 +24,27 @@ public class Player : MonoBehaviour
     private Transform rearLeftMesh;
 
     [SerializeField]
-    private float forwardSpeed = 300f;
-
+    private float forwardSpeed = 4000f;
     [SerializeField]
-    private float reverseSpeed = 150f;
-
+    private float reverseSpeed = 3500f;
     [SerializeField]
-    private float maxTurnAngle = 30f;
+    private float maxTurnAngle = 45f;
+    [SerializeField]
+    private float breakingForce = 300f;
 
-    private float speedInput, turnInput;
+    private float speedInput, turnInput, currentBreakForce;
 
     private int lives = 3;
 
     private void FixedUpdate()
     { 
+
+        // Allowing the player to brake because this allows better handling of the car
+        if (Input.GetKey(KeyCode.Space)){
+            currentBreakForce = breakingForce;
+        } else {
+            currentBreakForce = 0;
+        }
         
         if (Input.GetAxis("Vertical") > 0){
             // the user wants to move forward
@@ -55,6 +62,11 @@ public class Player : MonoBehaviour
         frontLeft.motorTorque = speedInput;
         rearRight.motorTorque = speedInput;
         rearLeft.motorTorque = speedInput;
+
+        frontRight.brakeTorque = currentBreakForce;
+        frontLeft.brakeTorque = currentBreakForce;
+        rearRight.brakeTorque = currentBreakForce;
+        rearLeft.brakeTorque = currentBreakForce;
 
         frontLeft.steerAngle = turnInput;
         frontRight.steerAngle = turnInput;
