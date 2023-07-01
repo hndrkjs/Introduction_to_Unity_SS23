@@ -10,12 +10,7 @@ public class UI_Manager : MonoBehaviour
     private TextMeshProUGUI astronautsCollected;
     [SerializeField]
     private TextMeshProUGUI health;
-
-    private int n_atronauts = 0;
-
     
-    
-
     // this function is called in the LostAstronaut class when an astronaut detects a collision
     public void UpdateAstronautsCollected(int n_atronauts)
     {

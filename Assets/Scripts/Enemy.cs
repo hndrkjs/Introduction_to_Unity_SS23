@@ -23,6 +23,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float walkRange;
 
+    private float damageRate = 0.5f;
+     private float nextDamage = 0.0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -74,7 +77,9 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player")){
+        if(other.CompareTag("Player") & Time.time > nextDamage){
+            
+            nextDamage = Time.time + damageRate;
             other.GetComponent<Player>().Damage();
         }
     }
