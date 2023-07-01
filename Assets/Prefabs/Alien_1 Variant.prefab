@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 150b771c021f45d48873c0d8caddd485, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.8
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 150b771c021f45d48873c0d8caddd485, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3913952
+      value: 0.95815074
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 150b771c021f45d48873c0d8caddd485, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 34.3
+      value: 40.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 150b771c021f45d48873c0d8caddd485, type: 3}
       propertyPath: m_LocalRotation.w
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   agent: {fileID: 941011104336465838}
+  uiManager: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -150,7 +151,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2

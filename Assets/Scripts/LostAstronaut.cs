@@ -19,8 +19,6 @@ public class LostAstronaut : MonoBehaviour
 
             //this.gameObject.SetActive(false);
             Destroy(this.gameObject);
-
-            //uiManager.UpdateAstronautsCollected();
             
         }
 

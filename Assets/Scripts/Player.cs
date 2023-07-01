@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     private float speedInput, turnInput, currentBreakForce;
 
-    private int lives = 3;
+    public int lives = 3;
 
     private void FixedUpdate()
     { 
@@ -102,7 +102,8 @@ public class Player : MonoBehaviour
 
     public void Damage() {
         lives--;
-        //uiManager.UpdateLives(lives);
+        uiManager.UpdateLives(lives);
+        Debug.Log("Damage"+ lives);
     }
 
 
