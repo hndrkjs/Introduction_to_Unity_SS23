@@ -9,13 +9,12 @@ public class LostAstronaut : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // we need to check that the astronaut actually collided with the character. Since the aliens are moving around, a collision
-        // with an alien might be possible
-        PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
 
-        // only the Player has an inventory
-        if (playerInventory != null)
+        // check whether the astronaut was collected by the player
+        if (other.CompareTag("Player"))
         {
+            // get the player's inventory to increase the number of collected astronauts
+            PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
             playerInventory.AstronautCollected();
 
             //this.gameObject.SetActive(false);
