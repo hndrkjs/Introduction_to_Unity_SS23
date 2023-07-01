@@ -103,7 +103,6 @@ public class Player : MonoBehaviour
     public void Damage() {
         lives--;
         uiManager.UpdateLives(lives);
-        Debug.Log("Damage"+ lives);
     }
 
 
